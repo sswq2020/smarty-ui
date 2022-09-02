@@ -1,6 +1,14 @@
-import { createApp } from "vue";
-// import SButton from './button'
-// import SButton from './SFCButton.vue'
-import JSXButton from './JSXButton'
+import { createApp } from "vue/dist/vue.esm-bundler.js";
 
-createApp(JSXButton).mount('#app')
+ import SmartyUI from './entry'
+ createApp({
+    template:`
+        <div>
+            <SButton>
+            普通按钮
+            </SButton>
+        </div>
+    `
+})
+.use(SmartyUI)
+.mount("#app");
