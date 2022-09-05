@@ -154,6 +154,12 @@ export default defineComponent({
 
 问题来了，如果单页面的引入，是不会有这个问题。一旦全局注册app.use或者app.component注册就会检查name属性的匹配https://cn.vuejs.org/api/options-misc.html#name
 
+- 引入unocss 的vscode问题,开始直接能用，现在不行，待定
+
+- 引入unocss，pnpm build，会报错，解决办法是根据提示增加编译选项 cssCodeSplit vite.config.ts，简单解释一下原因： cssCodeSplit 这个选项是为了决定在编译的时候是否要独立输出 css。显然这里面应该选择为 true。
+
+
+
 
 
 
