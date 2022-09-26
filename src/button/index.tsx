@@ -1,5 +1,6 @@
 import {defineComponent,PropType,toRefs} from 'vue'
 import "uno.css"
+import './index.css'
 export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green'|'blue'|'indigo'|'purple'|'pink'
 export type ISize = "samll" | 'medium' | 'large'
 export const props = {
@@ -23,6 +24,10 @@ export const props = {
   icon:{
     type:String,
     default:''
+  },
+  loading:{
+    type: Boolean,
+    default:false
   }
 }
 const size = {
@@ -52,6 +57,7 @@ export default defineComponent({
         <button  
           class={
             `
+            border-1
             py-${size[props.size].y}
             px-${size[props.size].x}
             font-semibold
@@ -67,8 +73,9 @@ export default defineComponent({
             hover:text-white
             `
           }
-        >   
-            {props.icon ? (<i class={`i-ic-baseline-${props.icon} p-3`}></i>): ""}
+        > 
+            {props.loading ? (<i class={'i-carbon-circle-dash loading p-3'}></i>): ""}
+            {props.icon && !props.loading ? (<i class={`i-ic-baseline-${props.icon} p-3`}></i>): ""}
             {slots.default ? slots.default():''}
         </button>
         

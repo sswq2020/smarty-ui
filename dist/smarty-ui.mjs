@@ -20,6 +20,10 @@ const props = {
   icon: {
     type: String,
     default: ""
+  },
+  loading: {
+    type: Boolean,
+    default: false
   }
 };
 const size = {
@@ -61,7 +65,9 @@ const SButton = defineComponent({
             m-1
             hover:text-white
             `
-    }, [props2.icon ? createVNode("i", {
+    }, [props2.loading ? createVNode("i", {
+      "class": `i-carbon-circle-dash p-3`
+    }, null) : "", props2.icon && !props2.loading ? createVNode("i", {
       "class": `i-ic-baseline-${props2.icon} p-3`
     }, null) : "", slots.default ? slots.default() : ""]);
   }

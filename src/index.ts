@@ -45,6 +45,10 @@ createApp({
       <SButton color="yellow" size="large" icon="message"></SButton>
       <SButton color="red" size="large" icon="share"></SButton>
      </div>
+
+     <div>
+      <SButton color="blue" loading="true" size="large" :round="true">Loading1</SButton>
+     </div>
     `
 })
     .use(SmartyUI)

@@ -6,7 +6,8 @@
     },
     "include": [
         "./**/*.*",
-        "./src/shims-vue.d.ts"
+        "./src/shims-vue.d.ts",
+        "./docs/shims-vue.d.ts"
     ],
     "exclude": ["node_modules"],
     "esModuleInterop": true,
