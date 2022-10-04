@@ -158,8 +158,22 @@ export default defineComponent({
 
 - 引入unocss，pnpm build，会报错，解决办法是根据提示增加编译选项 cssCodeSplit vite.config.ts，简单解释一下原因： cssCodeSplit 这个选项是为了决定在编译的时候是否要独立输出 css。显然这里面应该选择为 true。
 
+## 配置 Vitest 测试组件库需要以下三个库：
+
+- vitest ：测试框架，用于执行整个测试过程并提供断言库、mock、覆盖率；
+
+- happy-dom：是用于提供在 Node 环境中的 Dom 仿真模型；
+
+- @vue/test-utils 工具库： Vue推荐的测试工具库。
 
 
+## 在vite.config.ts 中增加Vitest配置会出现报错
+
+- 解决的办法就是在 vite.config.ts 中增加一个类型定义声明
+
+``` ts
+ /// <reference types="vitest" />
+```
 
 
 
