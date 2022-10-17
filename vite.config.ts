@@ -21,14 +21,16 @@ export default defineConfig({
   ],
   build: {
     rollupOptions,
-    minify: false,
+    minify: 'terser', // boolean | 'terser' | 'esbuild'
+    sourcemap: true, // 输出单独 source文件
+    reportCompressedSize:true,
     cssCodeSplit: true,
     lib: {
       entry: './src/entry.ts',
       name: 'SmartyUI',
       fileName: 'smarty-ui',
       // 导出模块格式
-      formats: ['es', "umd", "iife"]
+      formats: ['es','esm',"umd", "iife"]
     }
   },
   test: {
