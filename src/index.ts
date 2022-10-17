@@ -1,9 +1,9 @@
 import { createApp } from "vue/dist/vue.esm-bundler.js";
 
-import "uno.css"
-import SmartyUI from './entry'
+import "uno.css";
+import SmartyUI from "./entry";
 createApp({
-    template: `
+  template: `
         <div>
            <SButton color="blue">
            蓝色按钮
@@ -49,7 +49,7 @@ createApp({
      <div>
       <SButton color="blue" loading="true" size="large" :round="true">Loading1</SButton>
      </div>
-    `
+    `,
 })
-    .use(SmartyUI)
-    .mount("#app");
+  .use(SmartyUI)
+  .mount("#app");

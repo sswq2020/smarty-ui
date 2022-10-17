@@ -175,7 +175,22 @@ export default defineComponent({
  /// <reference types="vitest" />
 ```
 
+## pnpm init 出现
 
+``` shell
+Oops! Something went wrong! :(
+
+ESLint: 8.25.0
+
+Error: Failed to load plugin '@typescript-eslint' declared in '.eslintrc.cjs': Cannot find module 'typescript'
+lianxi@lianxideMacBook-Air smarty-ui-vite % pnpm lint 
+```
+
+- 解决方法
+
+```
+ pnpm i typescript
+```
 
 
 
